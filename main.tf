@@ -7,7 +7,7 @@ resource "aws_instance" "one" {
   ami                    = "ami-0ecb62995f68bb549"
   instance_type          = "c7i-flex.large"
   key_name               = "rahamdocker"
-  vpc_security_group_ids = ["sg-046cd16cdb7a78595"]
+  vpc_security_group_ids = ["sg-058a8c775a14e219a"]
   tags = {
     Name = var.instance_names[count.index]
   }
@@ -16,3 +16,4 @@ resource "aws_instance" "one" {
 variable "instance_names" {
   default = ["jenkins", "tomcat-1", "tomcat-2", "Monitoring server"]
 }
+
