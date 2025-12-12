@@ -4,10 +4,10 @@ provider "aws" {
 
 resource "aws_instance" "one" {
   count                  = 4
-  ami                    = "ami-0ecb62995f68bb549"
+  ami                    = "ami-01b9f1e7dc427266e"
   instance_type          = "c7i-flex.large"
-  key_name               = "default"
-  vpc_security_group_ids = ["sg-09a6880fc8b6299d6"]
+  key_name               = "aneesh-sg"
+  vpc_security_group_ids = ["sg-0125b8b1685a464c7"]
   tags = {
     Name = var.instance_names[count.index]
   }
@@ -16,5 +16,6 @@ resource "aws_instance" "one" {
 variable "instance_names" {
   default = ["jenkins", "tomcat-1", "tomcat-2", "Monitoring server"]
 }
+
 
 
